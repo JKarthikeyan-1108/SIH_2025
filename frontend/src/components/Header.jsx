@@ -47,16 +47,18 @@ export const Header = ({ language, onLanguageChange, translations }) => {
 
           {/* Language Selector & Mobile Menu */}
           <div className="flex items-center gap-3">
-            <LanguageSelector 
-              currentLanguage={language} 
-              onLanguageChange={onLanguageChange}
-            />
+            <div className="hidden sm:block">
+              <LanguageSelector 
+                currentLanguage={language} 
+                onLanguageChange={onLanguageChange}
+              />
+            </div>
             
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden"
+              className="lg:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
