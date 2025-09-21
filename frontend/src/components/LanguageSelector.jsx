@@ -6,6 +6,7 @@ export const LanguageSelector = ({ currentLanguage, onLanguageChange }) => {
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
+    { code: 'ta', name: 'தமிழ்', flag: '🇮🇳' },
   ];
 
   return (
