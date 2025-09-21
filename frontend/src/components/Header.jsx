@@ -32,8 +32,8 @@ export const Header = ({ language, onLanguageChange, translations }) => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - Hidden on screens smaller than lg */}
+          <nav style={{ display: 'none' }} className="lg:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.key}
@@ -45,20 +45,21 @@ export const Header = ({ language, onLanguageChange, translations }) => {
             ))}
           </nav>
 
-          {/* Language Selector & Mobile Menu */}
+          {/* Right side controls */}
           <div className="flex items-center gap-3">
-            <div className="hidden sm:block">
+            {/* Desktop Language Selector */}
+            <div style={{ display: 'none' }} className="sm:block">
               <LanguageSelector 
                 currentLanguage={language} 
                 onLanguageChange={onLanguageChange}
               />
             </div>
             
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Show on screens smaller than lg */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden p-2"
+              className="p-2 block lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
