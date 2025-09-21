@@ -101,6 +101,19 @@ html {
   }
 }
 
+/* Hide Emergent watermark */
+[style*="Made with Emergent"],
+[title*="Made with Emergent"],
+*:contains("Made with Emergent") {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide any fixed positioned elements in bottom right that might be watermarks */
+*[style*="position: fixed"][style*="bottom"][style*="right"] {
+  opacity: 0 !important;
+}
+
 /* Print Styles */
 @media print {
   .App header,
