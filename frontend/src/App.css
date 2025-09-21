@@ -61,6 +61,37 @@ html {
   }
 }
 
+/* Responsive Navigation */
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .desktop-lang-selector {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .desktop-lang-selector {
+    display: block !important;
+  }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .App * {
