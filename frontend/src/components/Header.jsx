@@ -68,8 +68,16 @@ export const Header = ({ language, onLanguageChange, translations }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-orange-100">
+          <nav className="lg:hidden mt-4 pb-4 border-t border-orange-100 bg-white">
             <div className="flex flex-col gap-3 mt-4">
+              {/* Mobile Language Selector */}
+              <div className="px-3 py-2 sm:hidden">
+                <LanguageSelector 
+                  currentLanguage={language} 
+                  onLanguageChange={onLanguageChange}
+                />
+              </div>
+              
               {navItems.map((item) => (
                 <a
                   key={item.key}
